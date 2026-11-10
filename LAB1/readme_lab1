@@ -1,0 +1,98 @@
+# LAB 1 – MÃ HÓA ĐỐI XỨNG CỔ ĐIỂN
+
+## Thông tin sinh viên
+
+- **Họ và tên:** Trần Lê Anh Đại
+- **MSSV:** 1150080007
+- **Lớp:** 11CNPM1
+- **Học phần:** An toàn và Bảo mật thông tin
+
+## Giới thiệu
+
+Project LAB 1 thực hành mã hóa đối xứng cổ điển, được xây dựng bằng Java Swing và Maven theo tài liệu hướng dẫn của học phần.
+
+## Công nghệ sử dụng
+
+- Java JDK 17
+- Apache NetBeans IDE 31
+- Java Swing
+- Apache Maven
+- Microsoft SQL Server
+- Microsoft JDBC Driver
+
+## Chức năng
+
+### Sáu thuật toán mã hóa
+
+1. Caesar Cipher
+2. Vigenère Cipher
+3. Rail Fence Cipher
+4. Playfair Cipher
+5. Transposition Cipher
+6. Autokey Cipher
+
+### Chức năng bổ sung
+
+- Mã hóa và giải mã văn bản.
+- Mở và lưu tệp văn bản.
+- Lựa chọn thuật toán trong chương trình tổng hợp.
+- Kết nối SQL Server.
+- Lưu và xem lịch sử mã hóa.
+- Phân tích mật mã cổ điển.
+
+## Cấu trúc project
+
+```text
+LAB1_MaHoaCoDien/
+├── pom.xml
+├── src/
+│   └── main/
+│       └── java/
+│           └── week_01/
+│               ├── CaesarCipher.java
+│               ├── VigenereCipher.java
+│               ├── RailFenceCipher.java
+│               ├── PlayfairCipher.java
+│               ├── TranspositionCipher.java
+│               ├── AutokeyCipher.java
+│               ├── FileTextIO.java
+│               └── ...
+└── README.md
+```
+
+## Hướng dẫn chạy
+
+1. Cài đặt JDK 17 và Apache NetBeans.
+2. Mở NetBeans → File → Open Project.
+3. Chọn thư mục `LAB1_MaHoaCoDien`.
+4. Nhấp phải project → Clean and Build.
+5. Nhấn F6 để chạy chương trình.
+
+## Kiểm thử
+
+| Thuật toán | Plaintext | Key | Kết quả mong đợi |
+|---|---|---|---|
+| Caesar | HELLO | 3 | KHOOR |
+| Vigenère | HELLO | KEY | RIJVS |
+| Rail Fence | HELLO WORLD | 3 | HOREL OLLWD |
+| Playfair | HELLOWORLD | KEYWORD | GYIZSCOKCFBU |
+| Transposition | BAOMAT | 2,3,1 | AAOTBM |
+| Autokey | HELLO | KEY | RIJSS |
+
+## Trạng thái thực hiện
+
+- [x] Mở project bằng NetBeans 31.
+- [x] Maven Build thành công.
+- [ ] Kiểm thử trực tiếp giao diện và sáu thuật toán.
+- [ ] Xác minh kết nối SQL Server.
+- [ ] Kiểm tra chức năng lưu và xem lịch sử.
+
+## Minh chứng
+
+Ảnh chụp màn hình quá trình thực hành và kết quả kiểm thử được lưu trong thư mục `evidence/` khi hoàn thành.
+
+## Kết luận
+
+Bài thực hành giúp tìm hiểu nguyên lý của các thuật toán mã hóa đối xứng cổ điển, ứng dụng Java Swing và cách tổ chức project Maven.
+
+**Sinh viên thực hiện:** Trần Lê Anh Đại – 1150080007 – 11CNPM1.
