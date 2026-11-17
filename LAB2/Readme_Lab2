@@ -1,0 +1,88 @@
+# LAB 2 – MÃ HÓA ĐỐI XỨNG HIỆN ĐẠI
+
+## 1. Thông tin sinh viên
+- **Họ và tên:** Trần Lê Anh Đại
+- **MSSV:** 1150080007
+- **Lớp:** 11CNPM1
+- **Học phần:** An toàn và Bảo mật thông tin
+- **Bài thực hành:** LAB 2 – Mã hóa đối xứng hiện đại
+
+## 2. Mục tiêu
+Tìm hiểu và thực hành các thuật toán mã hóa đối xứng hiện đại, bao gồm DES, TripleDES, AES, RC4 và Twofish.
+
+Xây dựng ứng dụng Java Swing cho phép người dùng mã hóa, giải mã văn bản, lưu và mở tệp, đồng thời tích hợp SQL Server để quản lý tài khoản và lịch sử thao tác.
+
+## 3. Công nghệ sử dụng
+- Ngôn ngữ: Java 17, Python 3
+- IDE: Apache NetBeans
+- Giao diện: Java Swing
+- Quản lý thư viện: Apache Maven
+- Cơ sở dữ liệu: Microsoft SQL Server Express
+- Thư viện: BouncyCastle, Microsoft JDBC Driver
+- Thuật toán: DES, TripleDES, AES, RC4, Twofish, AES-CTR, AES-CBC
+
+## 4. Nội dung thực hiện
+
+### Bài 2.1 – DES
+- Mã hóa và giải mã văn bản bằng DES/CBC/PKCS5Padding.
+- Sử dụng khóa 8 byte.
+- Sinh IV ngẫu nhiên cho mỗi lần mã hóa.
+- Hiển thị bản mã dưới dạng Base64.
+
+### Bài 2.2 – TripleDES
+- Mã hóa và giải mã bằng TripleDES.
+- Sử dụng khóa 24 byte.
+- Kiểm tra tính hợp lệ của khóa.
+- Hỗ trợ lưu và mở tệp văn bản.
+
+### Bài 2.3 – AES
+- Thực hiện mã hóa và giải mã AES.
+- Xây dựng chức năng đăng ký và đăng nhập.
+- Sử dụng PBKDF2 để bảo vệ mật khẩu.
+- Tạo Ticket sau khi đăng nhập thành công.
+- Lưu lịch sử thao tác vào SQL Server.
+
+### Bài 2.4 – RC4
+- Cài đặt thuật toán mã hóa dòng RC4.
+- Thực hiện mã hóa và giải mã.
+- Hiển thị kết quả dưới dạng HEX.
+- Kiểm tra bằng bộ dữ liệu mẫu.
+
+### Bài 2.5 – Twofish
+- Sử dụng thư viện BouncyCastle.
+- Mã hóa và giải mã văn bản.
+- Sinh IV và hỗ trợ lưu, khôi phục IV khi mở tệp.
+
+### Bài 2.6 – AES-CTR và AES-CBC
+- Thực hiện mã hóa và giải mã AES-CTR.
+- Sử dụng Nonce ngẫu nhiên.
+- Thực hành AES-CBC bằng Python.
+- Kiểm tra tính chính xác của quá trình mã hóa và giải mã.
+
+## 5. Cơ sở dữ liệu
+Sử dụng SQL Server với cơ sở dữ liệu `LAB2_MaHoaHienDai`, bao gồm:
+
+- `dbo.app_users`: Quản lý tài khoản người dùng.
+- `dbo.crypto_history`: Lưu lịch sử các thao tác mã hóa và giải mã.
+
+## 6. Hướng dẫn chạy chương trình
+1. Cài đặt JDK 17 hoặc 21 và Apache NetBeans.
+2. Giải nén project.
+3. Mở project bằng NetBeans.
+4. Chạy các script SQL trong SQL Server Management Studio.
+5. Thực hiện Clean and Build để tải các thư viện Maven.
+6. Chạy project bằng phím F6.
+7. Sử dụng menu chính để lựa chọn thuật toán mã hóa.
+
+## 7. Kết quả
+- Đã xây dựng project Java Maven với các chức năng mã hóa và giải mã.
+- Kiểm thử mã hóa và giải mã Java thành công.
+- Chương trình Python AES-CBC đạt kết quả SELF-TEST OK.
+- Đã chuẩn bị script SQL và chức năng kết nối cơ sở dữ liệu.
+
+**Lưu ý:** Cần cấu hình và kiểm thử kết nối SQL Server trên máy thực hành.
+
+## 8. Kết luận
+Thông qua LAB 2, sinh viên tìm hiểu nguyên lý hoạt động của các thuật toán mã hóa đối xứng, cách sử dụng khóa, IV và Nonce, đồng thời thực hành xây dựng ứng dụng mã hóa bằng Java và Python.
+
+Bài thực hành giúp củng cố kiến thức về bảo mật dữ liệu và ứng dụng mật mã học trong phát triển phần mềm.
