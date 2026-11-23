@@ -1,0 +1,50 @@
+LAB 3 – MÃ HÓA KHÓA CÔNG KHAI
+Học phần: An toàn và Bảo mật thông tin
+Sinh viên: Trần Lê Anh Đại
+MSSV: 1150080007
+Lớp: 11CNPM1
+Thư mục bài lab: LAB3_MaHoaKhoaCongKhai
+1. Mục tiêu
+Thực hành mật mã khóa công khai RSA, ECC, hệ mã lai RSA–AES, chữ ký số ECDSA và ghi nhật ký thao tác trên Microsoft SQL Server.
+2. Môi trường
+- Windows 11; Java JDK 17 trở lên; Apache NetBeans; Maven.
+- Microsoft SQL Server Express, SQL Server Management Studio (SSMS).
+- Thư viện Maven: com.microsoft.sqlserver:mssql-jdbc:12.8.1.jre11.
+- Package Java: week_03.
+3. Cấu trúc project
+LAB3_MaHoaKhoaCongKhai/
+├── pom.xml
+├── README.md
+├── 03_SQL_SERVER/
+│   ├── 01_Tao_CSDL.sql
+│   └── 02_Tao_TaiKhoan_LAB.sql
+└── src/main/java/week_03/
+    ├── frm_Menu.java
+    ├── RSADemo.java, RSACipher.java
+    ├── ECCCipher.java, ECCSignature.java
+    ├── RSA_AES_Cipher.java, CryptoSupport.java
+    ├── CryptoFrame.java, FileTextIO.java
+    ├── frm_RSA.java, frm_ECC.java, frm_RSA_AES.java
+    ├── frm_ECC_Signature.java
+    └── DbConfig.java, HistoryDao.java,
+        frm_KetNoiSQL.java, frm_LichSu.java
+4. Cách chạy
+1. Giải nén project, vào NetBeans → File → Open Project.
+2. Chọn thư mục LAB3_MaHoaKhoaCongKhai, sử dụng JDK 17+.
+3. Clean and Build, sau đó Run Project (F6) để mở week_03.frm_Menu.
+4. Với bài RSA console, chạy riêng week_03.RSADemo.
+5. Giao diện được lập trình bằng Java Swing trực tiếp, không có file .form kéo-thả.
+5. Thiết lập SQL Server
+1. Bật TCP/IP cổng 14333, SQL Server Authentication (Mixed Mode) và khởi động lại dịch vụ.
+2. Trong SSMS, chạy 01_Tao_CSDL.sql rồi 02_Tao_TaiKhoan_LAB.sql.
+3. Trong ứng dụng, mở Kết nối SQL Server, nhập server 127.0.0.1, port 14333, database LAB3_MaHoaKhoaCongKhai, user lab3_user và mật khẩu theo tài liệu thực hành.
+4. Chọn Test Connection, thực hiện một thao tác mã hóa và mở Xem lịch sử.
+5. Không đưa mật khẩu, khóa riêng hay thông tin bí mật lên GitHub.
+6. Các tình huống kiểm thử
+| Bài | Dữ liệu kiểm thử | Kết quả mong đợi | Thực tế |
+|---|---|---|---|
+| RSA | `HELLO RSA`, khóa 2048 và 3072 bit | Giải mã trùng bản rõ | Chưa xác nhận trên máy |
+| ECC | `HELLO ECC` | Giải mã đúng; khóa sai bị từ chối | Chưa xác nhận trên máy |
+| RSA–AES | Văn bản dài hơn 1000 ký tự | Giải mã đúng; sửa bản mã thất bại | Chưa xác nhận trên máy |
+| ECDSA | `THONG DIEP A` | VALID; sửa thông điệp thành INVALID | Chưa xác nhận trên máy |
+| SQL Server | Một thao tác ENCRYPT | Có bản ghi trong `dbo.History` | Chưa xác nhận trên máy |
